@@ -23,8 +23,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     QXlsx::Document xlsx;
-    xlsx.write("A1", "Hello digga!"); // write "Hello Qt!" to cell(A,1). it's shared string.
-    xlsx.saveAs("test.xlsx"); // save the document as 'Test.xlsx'
+
 
     Document xlsxR("excel_to_import.xlsx");
 
@@ -37,7 +36,7 @@ int main(int argc, char *argv[])
                         if ( cell != NULL )
                         {
                             QVariant var = cell->readValue(); // read cell value (number(double), QDateTime, QString ...)
-                            qDebug() << var; // display value. it is 'Hello Qt!'.
+                            qDebug() << var;
                         }
                     }
                }
